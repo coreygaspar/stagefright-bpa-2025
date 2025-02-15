@@ -2,9 +2,11 @@
 Website created for the Business Professionals of America Website Design Team competition.
 
 **Team Members:**
+---
 - Corey Gaspar
 - Alexander Carrasco
 - Felipe Zak
+
 
 **Competition Topic:**
 ---
@@ -15,6 +17,7 @@ Your site must include, but is not limited to:
 - Merch (swag) – Create a page with your choice of merchandise for the band to sell along with purchasing options.
 - Contact Us – Include a booking link, email link, and customer service link.
 Teams who do not submit an entry that follows the topic above will be disqualified.
+
 
 **Competencies:**
 ---
