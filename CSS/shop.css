@@ -1,0 +1,668 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%; 
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+
+  /* variables can go here */
+  --white: #FFFFFF;
+  --dark-grey-24: #242424;
+  --dark-grey-30: #303030;
+  --light-grey: #9A9A9A;
+  --light-grey-D: #DDDDDD;
+  --green: #6bfe6b;
+
+  /* accent colors */
+  accent-color: var(--green);
+}
+
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
+::selection {
+  color: var(--white);
+  background: var(--green);
+}
+
+html,
+body {
+  font-size: 1.6rem;
+  color: white;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+body {
+  /* components for layout structure */
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers the content horizontally */
+  background: #5f5f5f;  /* sets a default background for the page */
+  font-family: 'Bungee';
+  min-height: 100dvh;   /* uses min height so that the body can expand as needed */
+  font-size: 2.4rem; /* sets the friggin font size yo */
+}
+
+/*------------------------------------ end minimal css reset -----------------------------------*/
+
+/* general styles */
+a {
+  color: var(--white);
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: relative;
+  transition: color 250ms ease-in-out;
+}
+
+a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* all nav styles */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  width: 100%;
+  background: var(--dark-grey-24);
+  margin-bottom: 4rem;
+  text-transform: capitalize;
+  font-family: 'bungee';
+  z-index: 999;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.link-container button {
+  all: unset;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.link-container > a::after, .menu > a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--green);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.link-container > a:hover, .menu > a:hover, .link-container > button:hover { 
+  color: var(--green);
+  transition: all 250ms ease-in-out;
+}
+
+nav img {
+  padding-top: 5rem;
+  height: 15rem; 
+}
+
+
+.menu { 
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80dvh;
+  width: 100%;
+  z-index: -1;
+  margin-top: auto;
+  flex-direction: column;
+}
+
+.dropdown, .mobile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.mobile-dropdown .dropbtn {
+  all: unset;
+  color: var(--white);
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--dark-grey-24);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  min-width: 160px;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: .75rem
+}
+
+#about-dropdown-inner {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1;
+}
+
+.dropdown:hover .nav-dropdown {
+  display: flex;
+}
+
+.dropdown a {
+  color: var(--white);
+  padding: 1rem;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown a:hover {
+  background-color: var(--light-grey);
+}
+
+#menubtn {
+  display: none;
+}
+
+#mobile-logo {
+  display: none;
+}
+
+span {
+  font-family: 'Bungee';
+  color: var(--green);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+  padding: 1rem;
+  gap: 1dvw;
+  background: var(--light-grey-D);
+  margin-top: 0; /* Remove margin-top to place it directly above the footer */
+}
+
+.socials > a > i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-size: 3rem;
+  background: var(--dark-grey-30);
+  padding: 1.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  color: var(--green);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center items vertically */
+  height: fit-content;
+  width: 100%;
+  
+  padding: 2rem;
+  background: var(--dark-grey-24);
+  font-size: 1.8rem;
+
+  margin-top: auto; /* Ensure no extra space between socials and footer */
+}
+
+footer img {
+  max-width: 15dvw;
+}
+
+
+.mobile-menu {
+  display: none; 
+  position: absolute;
+  top: 0;
+  flex-direction: column;
+  padding: 8rem;
+  height: 100dvh;
+  width: 100%;
+  background: var(--dark-grey-24);
+  z-index: 1;
+  transition: all 750ms ease-in-out;
+  gap: 2rem;
+}
+
+.fa-times {
+  display: block;
+  position: absolute;
+  top: 4rem;
+  right: 2rem;
+}
+
+a, .dropbtn {
+  all: unset;
+  font-family: bungee;
+  font-size: 2.2rem;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 250ms ease-in-out;
+}
+
+.mobile-menu a:hover, .mobile-menu a:focus, .dropbtn:hover {
+  color: var(--green);
+  transition: color 250ms ease-in-out;
+}
+
+.m-drop {
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.m-drop > a {
+  margin-top: -1.5rem;
+  margin-bottom: .5rem;
+  margin-left: 1.5rem;
+}
+
+.shop-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 2.4rem;
+  height: 100%;
+  margin-bottom: 10dvh;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background: var(--dark-grey-30);
+  height: 50rem;
+  width: 30rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.card img { 
+  position: relative;
+  top: 0;
+  width: auto;
+  height: 30rem;
+}
+
+.card span {
+  margin: 1rem 0;
+}
+
+.card button {
+  all: unset;
+  font-family: bungee;
+  font-size: 2.2rem;
+  color: var(--dark-grey-24);
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  border-radius: 1.2rem;
+  background: var(--green);
+  transition: color 250ms ease-in-out;
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-family: bungee;
+  font-size: 4rem;
+  text-align: center;
+  margin: 2rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cart {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background: var(--dark-grey-24);
+  max-height: 60rem;
+  min-height: 35rem;
+  width: 60rem;
+  z-index: 99;
+  margin-top: 8.5rem; /* Adjusted to be below the nav */
+  margin-right: .5rem;
+  border-radius: 1rem;
+}
+
+.cart-title {
+  font-size: 2.4rem;
+  margin: 1rem 0;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-y: auto;
+  max-height: 40rem; /* Adjust as needed */
+  width: 99%;
+}
+
+.cart-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 90%;
+  margin: .5rem 0;
+  font-size: 1.8rem;
+}
+
+/* Style adjustments for cart quantity input field */
+.cart-child input.cart-quantity {
+  width: 4rem;
+  margin: 1rem;
+  text-align: center;
+  font-size: 1.6rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 0.5rem;
+  background-color: var(--dark-grey-30);
+  color: var(--white);
+  font-family: bungee;
+}
+
+/* Hide up and down arrows for number input (Chrome, Safari, Edge) */
+.cart-child input.cart-quantity::-webkit-inner-spin-button,
+.cart-child input.cart-quantity::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spinner for Firefox */
+.cart-child input.cart-quantity {
+  -moz-appearance: textfield;
+}
+
+
+
+.cart-child button .fa-times {
+  position: static;
+  top: auto;
+  right: auto;
+  margin-left: 1rem; /* optional spacing */
+}
+
+.cart-child button {
+  all: unset;
+  color: var(--green);
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 75%;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.shop button {
+  color: var(--green);
+  font-size: 2.6rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+
+#checkoutBtn {
+    all: unset;
+    font-family: bungee;
+    font-size: 2.2rem;
+    color: var(--dark-grey-24);
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    border-radius: 1.2rem;
+    background: var(--green);
+    margin-bottom: 4rem;
+}
+
+#paypal-checkout-modal {
+  /* makes sure modal only takes up full screen */
+  max-height: 100vh;
+  overflow: auto;
+  z-index: 999;
+}
+
+#paypal-checkout-container {
+    /* allow paypal checkout container to scroll internally */
+    max-height: 90vh;
+    overflow-y: auto;
+    /* remove transform scale to prevent any clipping */
+    transform: none !important;
+}
+
+/* Remove existing slideIn/slideOut keyframes and add desktop versions */
+@keyframes desktopSlideIn {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes desktopSlideOut {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+/* Add explicit styling for the mobile cart button */
+.mobilecart {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 2.4rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+/* media queries */
+ 
+@media only screen and (max-width: 767px) {
+  /* Show mobile-nav, menu, mobilecart, navcart elements; hide others */
+  nav > :not(.mobile-nav, .menu, .mobilecart, .navcart, .navcart *) {
+      display: none;
+  }
+
+  nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .mobilecart {
+      display: block;
+      margin: 0 1rem;
+    }
+
+  .link-container {
+      display: none;
+  }
+
+  #nav-logo {
+      display: block;
+      position: absolute;
+      margin: auto auto;
+  }
+
+  #menubtn {
+      display: block;
+      margin-left: auto;
+      margin-right: 2rem;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, ol, ul, img {
+      max-width: 100%;
+      padding: .75rem;
+  }
+
+  footer {
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1.3rem;  
+      z-index: 999;      
+  }
+
+  footer img {
+      max-width: 80%;
+  }
+
+  .socials > a > i {
+      width: 4rem;
+      height: 4rem;
+      font-size: 2rem;
+  }
+
+  /* Optionally adjust spacing for .mobilecart on mobile */
+  nav .mobilecart {
+      margin: 0 1rem;
+  }
+
+  /* Adjust cart styling for mobile screens */
+  .cart {
+      width: calc(100vw - 2rem);    /* fits within viewport with margin */
+      max-height: 80dvh;             /* reduce max height */
+      left: 50%;                  
+      transform: translateX(-50%);
+      top: 8rem;                   /* position below nav */
+      margin-top: 1rem;
+      font-size: 1.6rem; /* adjust font size for better readability */
+      
+  }
+
+  @keyframes mobileSlideIn {
+    0% { transform: translateX(-50%) translateY(-100%); }
+    100% { transform: translateX(-50%) translateY(0); }
+  }
+  
+  @keyframes mobileSlideOut {
+    0% { transform: translateX(-50%) translateY(0); }
+    100% { transform: translateX(-50%) translateY(-100%); }
+  }
+}
+
+@keyframes spinUp {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 180deg;
+  }
+}
+
+@keyframes spinDown {
+  0% {
+    rotate: 180deg;
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+
+}
+
+.back-to-top {
+  opacity: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 40px;
+  bottom: 40px;
+  border-radius: 5px;
+  width: 4rem;
+  height: 4rem;
+  background-color: #6BFE6B;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.back-to-top>i {
+  font-size: 2rem;
+  color: #353535;
+}
+
+.back-to-top:hover {
+  background-color: #016401;
+  cursor: pointer;
+}
+
+/* For Mobile */
+.back-to-top {
+  right: 20px;
+  bottom: 20px;
+}
