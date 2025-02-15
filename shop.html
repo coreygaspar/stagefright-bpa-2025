@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shop - Stage Fright</title>
+    <link rel="icon" type="image/png" href="./Assets/Images/SF_Logo_Circle_3.svg">
+    <link rel="stylesheet" href="./CSS/shop.css">
+    <script src="./JS/main.js?v0.1.6" defer></script>
+    <script src="./JS/shop.js?v0.1.6" defer></script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <nav>
+      <div class="link-container">
+        <a href="./index.html">home</a>
+        <div class="dropdown">
+            <a class="dropbtn" href="./about.html">about <i class="dropbtn fa-solid fa-caret-down"></i></a>
+
+            <div class="nav-dropdown">
+                <a href="./members.html">members</a>
+            </div>
+        </div>
+        <a href="./discography.html">discography</a>
+    </div>
+    <a id="nav-logo" href="./index.html"><img src="./Assets/Images/SF_Logo_Circle_3.svg"
+            alt="Stage Fright Logo"></a>
+        <button class="mobilecart" onclick="toggleCart()"><i class="fa-solid fa-cart-shopping"></i></button>
+
+        <a id="menubtn" class="mobile-nav"><i class="fas fa-bars"></i></a>
+        <!-- part 2....so that the logo is centered in the viewport -->
+      <div class="link-container">
+        <a href="./tours.html">tour</a>
+        <a href="./shop.html">shop</a>
+        <div class="dropdown">
+            <a class="dropbtn" href="./contact.html">contact us <i class="dropbtn fa-solid fa-caret-down"></i></a>
+           
+              <div class="nav-dropdown">
+                  <a href="./booking.html">booking</a>
+              </div>
+            </div>
+            <button onclick="toggleCart()"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+
+        <!-- Mobile Navigation -->
+      <div class="mobile-menu">
+        <a href="javascript:void(0);" id="closebtn" onclick="closeMenu(true)"><i class="fas fa-times"></i></a>
+        <a href="./index.html">home</a>
+        <button class="dropbtn" onclick="openDrop(0)">about <i
+                class="fa-solid fa-caret-down dropArrow"></i></button>
+        <div class="m-drop">
+            <a href="./about.html">about</a>
+            <a href="./members.html">members</a>
+        </div>
+        <a href="./discography.html">discography</a>
+        <a href="./tours.html">tour</a>
+        <a href="./shop.html">shop</a>
+        <button class="dropbtn" onclick="openDrop(1)">contact us <i
+                class="fa-solid fa-caret-down dropArrow"></i></button>
+        <div class="m-drop">
+            <a href="./contact.html">contact us</a>
+            <a href="./booking.html">booking</a>
+        </div>
+    </div>
+    </nav>
+
+    <div id="cart" class="cart"><!-- cart items will be generated via shop.js--></div>
+
+    <span class="title">Shop</span>
+    <div class="shop-grid">
+            <div class="card">
+                <img src="./Assets/Images/merch/sf-tee.jpg" alt="stage fright tee">
+                <span>stage fright tee</span>
+                <span class="price">$29.99</span>
+                <button onclick="AddToCart(0)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/sf-bw-tee.jpg" alt="Black / White Tee">
+                <span>white sf tee</span>
+                <span class="price">$29.99</span>
+                <button onclick="AddToCart(1)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/cc-album-tee.jpg" alt="Curtain Call Album Tee">
+                <span>curtain call tee</span>
+                <span class="price">$29.99</span>
+                <button onclick="AddToCart(2)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/sf-album-tee.jpg" alt="stage fright album tee">
+                <span>SF album tee</span>
+                <span class="price">$29.99</span>
+                <button onclick="AddToCart(3)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/fts-album-tee.jpg" alt="fear the stage tee">
+                <span>fear the stage tee</span>
+                <span class="price">$29.99</span>
+                <button onclick="AddToCart(4)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/hod-album-tee.jpg" alt="heart of darkness tee">
+                <span>heart of darkness tee</span>
+                <span class="price">$29.99</span>
+                <button onclick="AddToCart(5)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/sf-circle-tee.jpg" alt="SF Circle tee">
+                <span>SF Circle tee</span>
+                <span class="price">$29.99</span>
+                <button onclick="AddToCart(6)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/sf-horizontal-tee.jpg" alt="SF horizontal tee">
+                <span>SF horizontal tee</span>
+                <span class="price">$29.99</span>
+                <button onclick="AddToCart(7)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/cc-vinyl.jpg" alt="curtain call vinyl">
+                <span>curtain call vinyl</span>
+                <span class="price">$34.99</span>
+                <button onclick="AddToCart(8)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/sf-vinyl.jpg" alt="stage fright vinyl">
+                <span>stage fright vinyl</span>
+                <span class="price">$34.99</span>
+                <button onclick="AddToCart(9)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/fts-vinyl.jpg" alt="fear the stage vinyl">
+                <span>fear the stage vinyl</span>
+                <span class="price">$34.99</span>
+                <button onclick="AddToCart(10)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/hod-vinyl.jpg" alt="heart of darkness vinyl">
+                <span>heart of darkness vinyl</span>
+                <span class="price">$34.99</span>
+                <button onclick="AddToCart(11)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/sf-hoodie-front.png" alt="stage fright hoodie">
+                <span>2024 tour hoodie</span>
+                <span class="price">$55.99</span>
+                <button onclick="AddToCart(12)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/sf-circle-hoodie.jpg" alt="stage fright circle hoodie">
+                <span>green sf hoodie</span>
+                <span class="price">$55.99</span>
+                <button onclick="AddToCart(13)">buy</button>
+            </div>
+            <div class="card">
+                <img src="./Assets/Images/merch/sf-diagonal-logo-hoodie.jpg" alt="stage fright diagonal hoodie">
+                <span>SF diagonal hoodie</span>
+                <span class="price">$55.99</span>
+                <button onclick="AddToCart(14)">buy</button>
+            </div>
+        </div>
+        <!-- Back To Top Arrow -->
+    <div class="back-to-top" id="backtotop" onclick="scrollToTop()">
+      <i class="fa-solid fa-arrow-up"></i>
+  </div>
+    <!-- Footer -->
+    <div class="socials">
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://x.com/stagefright_bpa" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/stagefright_bpa/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@stagefright-bpa?si=EP9miu33vhX4YX_6" target="_blank"><i
+              class="fab fa-youtube"></i></a>
+      <a href="https://open.spotify.com/user/31hv5opaarjwkulp35yeskbfncem?si=6e6f69ab57b54d30" target="_blank"><i
+              class="fab fa-spotify"></i></a>
+  </div>
+
+  <footer>
+      <img src="./Assets/Images/sf-logo-footer.svg" alt="SF Logo">
+      <p>&copy; 2025 Stage Fright - All Rights Reserved.</p>
+  </footer>
+
+    <!-- Fetch PayPal client ID from Cloudflare Worker and load PayPal SDK -->
+    <script>
+      fetch("https://stagefrightpayment.felipe.ink")
+        .then(res => {
+          if (!res.ok) { throw new Error('Network response was not ok'); }
+          return res.json();
+        })
+        .then(data => {
+          const clientId = data.client_id;  // Ensure your worker returns a valid client_id
+          if (!clientId) {
+            console.error("Missing client_id from worker response");
+            return;
+          }
+          const script = document.createElement('script');
+          script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=USD`; // Ensure live environment
+          script.onload = function() {
+            paypal.Buttons({
+              createOrder: function(data, actions) {
+                return actions.order.create({
+                  purchase_units: [{
+                    amount: { value: '0.01' }
+                  }]
+                });
+              },
+              onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                  alert('Transaction completed by ' + details.payer.name.given_name);
+                });
+              },
+              onError: function(err) {
+                console.error('PayPal Checkout error', err);
+              }
+            }).render('#paypal-button-container');
+          };
+          document.head.appendChild(script);
+        })
+        .catch(err => console.error('Error fetching PayPal client ID:', err));
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tour - Stage Fright</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="icon" href="./Assets/Images/SF_Logo_Icon.png">
+    <script src="https://kit.fontawesome.com/9e1876eda9.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <script src="./JS/main.js" defer></script>  <!-- Scripts loaded with the defer attribute will load in the order they appear on the page -->
+</head>
+<body>
+    <nav>
+        <div class="link-container">
+            <a href="./index.html">home</a>
+            <div class="dropdown">
+                <a class="dropbtn" href="./about.html">about <i class="dropbtn fa-solid fa-caret-down"></i></a>
+
+                <div class="nav-dropdown">
+                    <a href="./members.html">members</a>
+                </div>
+            </div>
+            <a href="./discography.html">discography</a>
+        </div>
+        <a id="nav-logo" href="./index.html"><img src="./Assets/Images/SF_Logo_Circle_3.svg"
+                alt="Stage Fright Logo"></a>
+        <a id="menubtn"><i class="fas fa-bars"></i></a>
+        <!-- part 2....so that the logo is centered in the viewport -->
+        <div class="link-container">
+            <a href="./tours.html">tour</a>
+            <a href="./shop.html">shop</a>
+            <div class="dropdown">
+                <a class="dropbtn" href="./contact.html">contact us <i class="dropbtn fa-solid fa-caret-down"></i></a>
+
+                <div class="nav-dropdown">
+                    <a href="./booking.html">booking</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu">
+            <a href="javascript:void(0);" id="closebtn" onclick="closeMenu(true)"><i class="fas fa-times"></i></a>
+            <a href="./index.html">home</a>
+            <button class="dropbtn" onclick="openDrop(0)">about <i
+                    class="fa-solid fa-caret-down dropArrow"></i></button>
+            <div class="m-drop">
+                <a href="./about.html">about</a>
+                <a href="./members.html">members</a>
+            </div>
+            <a href="./discography.html">discography</a>
+            <a href="./tours.html">tour</a>
+            <a href="./shop.html">shop</a>
+            <button class="dropbtn" onclick="openDrop(1)">contact us <i
+                    class="fa-solid fa-caret-down dropArrow"></i></button>
+            <div class="m-drop">
+                <a href="./contact.html">contact us</a>
+                <a href="./booking.html">booking</a>
+            </div>
+        </div>
+    </nav>
+    <main class="tours-main">
+        <div class="container-tours">
+                <div class="header-tours">
+                    <div class="header-tours-info">
+                        <h1>Fright Night Tour</h1>
+                        <p>Stage Fright &#x2022; 2025 Tour</p>
+                    </div>
+                </div>
+            <div class="timer-tour">
+                <h1 id="countdown">37d 4h 51m 15s</h1>
+                <h1 class="timer-info">Until our next show!</p>
+            </div>
+            <div class="body-tour">
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">March 12</p>
+                            <p class="white-p-text">Boston, MA</p>
+                            <p class="white-p-text">TD Garden</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">March 14</p>
+                            <p class="white-p-text">Foxborough, MA</p>
+                            <p class="white-p-text">Gilette Stadium</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">March 15</p>
+                            <p class="white-p-text">New York, NY</p>
+                            <p class="white-p-text">Madison Square Garden</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">March 17</p>
+                            <p class="white-p-text">East Rutherford, NJ</p>
+                            <p class="white-p-text">MetLife Stadium</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">March 19</p>
+                            <p class="white-p-text">Hershey, PA</p>
+                            <p class="white-p-text">9:30 Club</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">March 23</p>
+                            <p class="white-p-text">Atlanta, GA</p>
+                            <p class="white-p-text">The Tabernacle</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">March 26</p>
+                            <p class="white-p-text">Chicago, IL</p>
+                            <p class="white-p-text">House of Blues</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">March 28</p>
+                            <p class="white-p-text">Detroit, MI</p>
+                            <p class="white-p-text">Ford Field</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">April 1</p>
+                            <p class="white-p-text">&#10240; Houston, TX</p>
+                            <p class="white-p-text">NRG Stadium</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">April 3</p>
+                            <p class="white-p-text">&#10240; Arlington, TX</p>
+                            <p class="white-p-text">AT&T Stadium</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">April 5</p>
+                            <p class="white-p-text">&#10240; Las Vegas, NV</p>
+                            <p class="white-p-text">Allegiant Stadium</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">April 7</p>
+                            <p class="white-p-text">&#10240; Los Angeles, CA</p>
+                            <p class="white-p-text">Sofi Stadium</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                        <div class="play-button"><p>&#8594;</p></div>
+                        <div class="item-tour">
+                            <p class="tours-date">April 8</p>
+                            <p class="white-p-text sanfran-tour">&#10240; San Francisco, CA</p>
+                            <p class="white-p-text">Oracle Park</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://www.ticketmaster.com/">
+                    <div class="section-tour">
+                            <div class="play-button"><p>&#8594;</p></div>
+                            <div class="item-tour">
+                                <p class="tours-date">April 10</p>
+                                <p class="white-p-text seattle-tour">Seattle, WA</p>
+                                <p class="white-p-text">Lumen Field</p>
+                            </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <div class="socials">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/stagefright_bpa" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/stagefright_bpa/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@stagefright-bpa?si=EP9miu33vhX4YX_6" target="_blank"><i
+                class="fab fa-youtube"></i></a>
+        <a href="https://open.spotify.com/user/31hv5opaarjwkulp35yeskbfncem?si=6e6f69ab57b54d30" target="_blank"><i
+                class="fab fa-spotify"></i></a>
+    </div>
+
+    <footer>
+        <img src="./Assets/Images/sf-logo-footer.svg" alt="SF Logo">
+        <p>&copy; 2025 Stage Fright - All Rights Reserved.</p>
+    </footer>
+    <div class="back-to-top" id="backtotop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+</body>
+</html>

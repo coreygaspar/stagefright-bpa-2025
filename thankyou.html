@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home - Stage Fright</title>
+    <link rel="icon" type="image/png" href="./Assets/Images/SF_Logo_Circle_3.svg">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <script src="./JS/main.js?v0.1.6" defer></script>
+    <script src="./JS/shop.js?v0.1.6" defer></script>
+    <!-- used to load inter font -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- load bungee font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+  <nav>
+    <div class="link-container">
+        <a href="./index.html">home</a>
+        <div class="dropdown">
+            <a class="dropbtn" href="./about.html">about <i class="dropbtn fa-solid fa-caret-down"></i></a>
+
+            <div class="nav-dropdown">
+                <a href="./members.html">members</a>
+            </div>
+        </div>
+        <a href="./discography.html">discography</a>
+    </div>
+    <a id="nav-logo" href="./index.html"><img src="./Assets/Images/SF_Logo_Circle_3.svg"
+            alt="Stage Fright Logo"></a>
+    <a id="menubtn"><i class="fas fa-bars"></i></a>
+    <!-- part 2....so that the logo is centered in the viewport -->
+    <div class="link-container">
+        <a href="./tours.html">tour</a>
+        <a href="./shop.html">shop</a>
+        <div class="dropdown">
+            <a class="dropbtn" href="./contact.html">contact us <i class="dropbtn fa-solid fa-caret-down"></i></a>
+
+            <div class="nav-dropdown">
+                <a href="./booking.html">booking</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu">
+        <a href="javascript:void(0);" id="closebtn" onclick="closeMenu(true)"><i class="fas fa-times"></i></a>
+        <a href="./index.html">home</a>
+        <button class="dropbtn" onclick="openDrop(0)">about <i
+                class="fa-solid fa-caret-down dropArrow"></i></button>
+        <div class="m-drop">
+            <a href="./about.html">about</a>
+            <a href="./members.html">members</a>
+        </div>
+        <a href="./discography.html">discography</a>
+        <a href="./tours.html">tour</a>
+        <a href="./shop.html">shop</a>
+        <button class="dropbtn" onclick="openDrop(1)">contact us <i
+                class="fa-solid fa-caret-down dropArrow"></i></button>
+        <div class="m-drop">
+            <a href="./contact.html">contact us</a>
+            <a href="./booking.html">booking</a>
+        </div>
+    </div>
+</nav>
+
+   
+    <span class="title"> Thanks for your purchase!</span>
+    <p class="centeredwithmargin">This site is only a proof-of-concept for Business Professionals of America, 2025 Team Web Design competition. You WILL NOT receive anything. in the event that you have purchased something, please send a message on the contact form. You WILL be refunded. </p>
+
+    
+
+    <!-- Footer -->
+
+  <footer>
+      <img src="./Assets/Images/sf-logo-footer.svg" alt="SF Logo">
+      <p>&copy; 2025 Stage Fright - All Rights Reserved.</p>
+  </footer>
+
+    <!-- New: Fetch PayPal client ID from Cloudflare Worker and load PayPal SDK -->
+    <script>
+      fetch("https://stagefrightpayment.felipexzak.workers.dev/")
+        .then(res => res.json())
+        .then(data => {
+          const clientId = data.client_id;
+          const script = document.createElement('script');
+          script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
+          script.onload = function() {
+            paypal.Buttons({
+              createOrder: function(data, actions) {
+                // Replace '0.01' with the total amount from your cart if available.
+                return actions.order.create({
+                  purchase_units: [{
+                    amount: { value: '0.01' }
+                  }]
+                });
+              },
+              onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                  alert('Transaction completed by ' + details.payer.name.given_name);
+                  // Optionally clear the cart or update your UI here.
+                });
+              },
+              onError: function(err) {
+                console.error('PayPal Checkout error', err);
+              }
+            }).render('#paypal-button-container');
+          };
+          document.head.appendChild(script);
+        })
+        .catch(err => console.error('Error fetching PayPal client ID:', err));
+    </script>
+
+</body>
+</html>

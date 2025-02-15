@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About - Stage Fright</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="icon" href="./Assets/Images/SF_Logo_Icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9e1876eda9.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <script src="./JS/main.js" defer></script>
+    <!-- Scripts loaded with the defer attribute will load in the order they appear on the page -->
+</head>
+
+<body>
+
+    <nav>
+        <div class="link-container">
+            <a href="./index.html">home</a>
+            <div class="dropdown">
+                <a class="dropbtn" href="./about.html">about <i class="dropbtn fa-solid fa-caret-down"></i></a>
+
+                <div class="nav-dropdown">
+                    <a href="./members.html">members</a>
+                </div>
+            </div>
+            <a href="./discography.html">discography</a>
+        </div>
+        <a id="nav-logo" href="./index.html"><img src="./Assets/Images/SF_Logo_Circle_3.svg"
+                alt="Stage Fright Logo"></a>
+        <a id="menubtn"><i class="fas fa-bars"></i></a>
+        <!-- part 2....so that the logo is centered in the viewport -->
+        <div class="link-container">
+            <a href="./tours.html">tour</a>
+            <a href="./shop.html">shop</a>
+            <div class="dropdown">
+                <a class="dropbtn" href="./contact.html">contact us <i class="dropbtn fa-solid fa-caret-down"></i></a>
+
+                <div class="nav-dropdown">
+                    <a href="./booking.html">booking</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu">
+            <a href="javascript:void(0);" id="closebtn" onclick="closeMenu(true)"><i class="fas fa-times"></i></a>
+            <a href="./index.html">home</a>
+            <button class="dropbtn" onclick="openDrop(0)">about <i
+                    class="fa-solid fa-caret-down dropArrow"></i></button>
+            <div class="m-drop">
+                <a href="./about.html">about</a>
+                <a href="./members.html">members</a>
+            </div>
+            <a href="./discography.html">discography</a>
+            <a href="./tours.html">tour</a>
+            <a href="./shop.html">shop</a>
+            <button class="dropbtn" onclick="openDrop(1)">contact us <i
+                    class="fa-solid fa-caret-down dropArrow"></i></button>
+            <div class="m-drop">
+                <a href="./contact.html">contact us</a>
+                <a href="./booking.html">booking</a>
+            </div>
+        </div>
+    </nav>
+    <section class="about-hero">
+        <div class="about-info">
+            <div class="about-info-text">
+                <h1> About Us </h1>
+                <img src="./Assets/Images/concertimage.jpg" alt="Large Crowd at Concert">
+                <p> Born in the heart of Massachusetts, Stage Fright is an Indie Rock band dedicated to creating smooth
+                    sounds. Each song is infused with soul, passion, and most importantly, fright!</p>
+            </div>
+            <div class="scroll-button-container">
+                <button class="scroll-down-button" id="scrollbutton" onclick="scrollDownToHistory()">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-hero about-hero-second" id="history">
+        <div class="about-info about-history">
+            <div class="about-info-text about-info-second">
+                <h1> History </h1>
+                <img src="./Assets/Images/concertimage2.jpeg" alt="Large Crowd at Concert with Balloons Overhead">
+                <p class="history-text">Stage Fright was formed in 2022 in Boston, MA, when Corey, Felipe, and Alex
+                    turned their jam sessions into a full-fledged band. Their sound blends various rock genres, from
+                    funk rock and indie to alternative and classic rock. Starting out in small bars, restaurants, and
+                    local music venues, the band quickly gained momentum and began performing across the country. The
+                    name "Stage Fright" represents the band’s fearless approach to performing, embracing the excitement
+                    and adrenaline that comes with being on stage. With their genre-blending rock sound and high-energy
+                    shows, Stage Fright continues to captivate audiences everywhere they go.
+                </p>
+            </div>
+            <div class="scroll-button-container">
+                <button class="scroll-down-button" id="scrollbutton" onclick="scrollDownToGallery()">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-gallery" id="gallery">
+        <h1> Gallery </h1>
+        <div class="about-gallery-container">
+            <div class="column gallery-left-column">
+                <img src="./Assets/Images/Gallery1.jpg" alt="Concert with Fireworks">
+                <img src="./Assets/Images/Drumming.jpg" alt="Drummer Playing the Drums">
+                <img src="./Assets/Images/PlayingGuitar.jpg" alt="Guitarist Playing the Guitar">
+                <img src="./Assets/Images/Piano.jpg" alt="Pianist Playing the Piano">
+            </div>
+            <div class="column gallery-right-column">
+                <img src="./Assets/Images/MusiciansConcert.jpg" alt="Silhoutte of Band Performing">
+                <img src="./Assets/Images/HandsUpConcert.jpg" alt="Crowd with Hands Up">
+                <img src="./Assets/Images/GuitarPlayer.jpg" alt="Guitarist Playing the Guitar">
+                <img src="./Assets/Images/StageContent.jpg" alt="Band Member Pointing into Crowd">
+            </div>
+        </div>
+    </section>
+    <div class="socials">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/stagefright_bpa" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/stagefright_bpa/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@stagefright-bpa?si=EP9miu33vhX4YX_6" target="_blank"><i
+                class="fab fa-youtube"></i></a>
+        <a href="https://open.spotify.com/user/31hv5opaarjwkulp35yeskbfncem?si=6e6f69ab57b54d30" target="_blank"><i
+                class="fab fa-spotify"></i></a>
+    </div>
+    <footer>
+        <img src="./Assets/Images/sf-logo-footer.svg" alt="SF Logo">
+        <p>&copy; 2025 Stage Fright - All Rights Reserved.</p>
+    </footer>
+    <div class="back-to-top" id="backtotop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+</body>
+
+</html>

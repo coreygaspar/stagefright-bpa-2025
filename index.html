@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Stage Fright</title>
+    <link rel="stylesheet" href="./CSS/main.css?v1.1.1">
+    <link rel="icon" href="./Assets/Images/SF_Logo_Icon.png">
+    <!-- used to load inter font -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- used to load bungee font --- research if there's an easier / lighter way to do this? that way the site isn't relying on other servers to load itself etc. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+</head>
+
+<body class="home-body">
+    <nav>
+        <div class="link-container">
+            <a href="./index.html">home</a>
+            <div class="dropdown">
+                <a class="dropbtn" href="./about.html">about <i class="dropbtn fa-solid fa-caret-down"></i></a>
+
+                <div class="nav-dropdown">
+                    <a href="./members.html">members</a>
+                </div>
+            </div>
+            <a href="./discography.html">discography</a>
+        </div>
+        <a id="nav-logo" href="./index.html"><img src="./Assets/Images/SF_Logo_Circle_3.svg"
+                alt="Stage Fright Logo"></a>
+        <a id="menubtn"><i class="fas fa-bars"></i></a>
+        <!-- part 2....so that the logo is centered in the viewport -->
+        <div class="link-container">
+            <a href="./tours.html">tour</a>
+            <a href="./shop.html">shop</a>
+            <div class="dropdown">
+                <a class="dropbtn" href="./contact.html">contact us <i class="dropbtn fa-solid fa-caret-down"></i></a>
+
+                <div class="nav-dropdown">
+                    <a href="./booking.html">booking</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu">
+            <a href="javascript:void(0);" id="closebtn" onclick="closeMenu(true)"><i class="fas fa-times"></i></a>
+            <a href="./index.html">home</a>
+            <button class="dropbtn" onclick="openDrop(0)">about <i
+                    class="fa-solid fa-caret-down dropArrow"></i></button>
+            <div class="m-drop">
+                <a href="./about.html">about</a>
+                <a href="./members.html">members</a>
+            </div>
+            <a href="./discography.html">discography</a>
+            <a href="./tours.html">tour</a>
+            <a href="./shop.html">shop</a>
+            <button class="dropbtn" onclick="openDrop(1)">contact us <i
+                    class="fa-solid fa-caret-down dropArrow"></i></button>
+            <div class="m-drop">
+                <a href="./contact.html">contact us</a>
+                <a href="./booking.html">booking</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Banner -->
+    <section class="hero-section" role="img" aria-label="Crowd at Concert">
+        <h1 class="hero-title">A TOUR SO GOOD, IT'S FRIGHTENING</h1>
+        <a href="./tours.html"><button class="hero-button">Get Tickets</button></a>
+    </section>
+    <!-- Stay Connected Section -->
+     <section class="connected-section">
+        <img class="connected-img" src="./Assets/Images/connected-img.jpg" alt="Crowd of people at a concert with their hands up">
+        <div class="connected-content">
+            <h2 class="connected-header">Stay Connected</h2>
+            <p class="connected-text">Sign up for our email notifications and stay connected with all the latest band updates, exclusive content, new releases, and tour announcements. Whether it's behind-the-scenes footage, early access to tickets, or special offers, we’ll keep you in the know.</p>
+            <a class="connected-link" href="./backstage.html"><button class="connected-button">Sign Up</button></a>
+        </div>
+     </section>
+     <!-- New Music Releases Section -->
+      <section class="music">
+        <h2 class="music-header">New Music Releases</h2>
+        <div class="music-content">
+            <a href="./FearTheStage.html"><div class="section">
+                <img class="album-cover" src="./Assets/Images/FearTheStage.png" alt="Fear The Stage Album Cover">
+                <h2 class="album-title">Fear The Stage</h2>
+                <p class="album">Album<br>
+                    2024
+                </p>
+            </div>
+            <a href="./CurtainCall.html"><div class="section">
+                <img class="album-cover" src="./Assets/Images/CurtainCall.png" alt="Curtain Call Album Cover">
+                <h2 class="album-title">Curtain Call</h2>
+                <p class="album">Album<br>
+                    2023
+                </p>
+            </div>
+            <a href="./HeartOfDarkness.html"><div class="section">
+                <img class="album-cover" src="./Assets/Images/HeartOfDarkness.png" alt="Heart of Darkness Album Cover">
+                <h2 class="album-title">Heart of Darkness</h2>
+                <p class="album">Album<br>
+                    2023
+                </p>
+            </div>
+        </div>
+      </section>
+      <!-- New Shop Releases Section -->
+      <section class="shop">
+        <h2 class="shop-header">New Shop Releases</h2>
+        <div class="shop-content">
+            <a href="./shop.html"><div class="section-2">
+                <img class="item-image" src="./Assets/Images/sfHoodieBack.png" alt="Image of Tour Hoodie">
+                <h2 class="item-name">2024 Tour Hoodie</h2>
+                <p class="price">$55.99</p>
+            </div></a>
+            <a href="./shop.html"><div class="section-2">
+                <img class="item-image" src="./Assets/Images/GreenGreySFCircleHoodie.jpg" alt="Image of Green/Grey SF Circle Hoodie">
+                <h2 class="item-name">SF Circle Hoodie</h2>
+                <p class="price">$55.99</p>
+            </div></a>
+            <a href="./shop.html"><div class="section-2">
+                <img class="item-image" src="./Assets/Images/BWStageFrightTee.jpg" alt="Image of Black/White SF Shirt">
+                <h2 class="item-name">White SF Tee</h2>
+                <p class="price">$29.99</p>
+            </div></a>
+      </section>
+
+    <!-- Back To Top Arrow -->
+    <div class="back-to-top" id="backtotop" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    <!-- Footer -->
+    <div class="socials">
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/stagefright_bpa" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/stagefright_bpa/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@stagefright-bpa?si=EP9miu33vhX4YX_6" target="_blank"><i
+                class="fab fa-youtube"></i></a>
+        <a href="https://open.spotify.com/user/31hv5opaarjwkulp35yeskbfncem?si=6e6f69ab57b54d30" target="_blank"><i
+                class="fab fa-spotify"></i></a>
+    </div>
+
+    <footer>
+        <img src="./Assets/Images/sf-logo-footer.svg" alt="SF Logo">
+        <p>&copy; 2025 Stage Fright - All Rights Reserved.</p>
+    </footer>
+    <script src="./JS/main.js"></script>
+    <script src="https://kit.fontawesome.com/a98fe81e92.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
